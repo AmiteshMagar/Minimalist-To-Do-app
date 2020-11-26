@@ -135,7 +135,7 @@ function SaveCompletedLocal(todo){
     else{
         completedTodos = JSON.parse(localStorage.getItem('completedTodos'));
     }
-    completedTodos.push(todo.children[0].innerHTML);
+    completedTodos.push(todo.children[1].innerHTML);
     localStorage.setItem('completedTodos', JSON.stringify(completedTodos));
 }
 // loading todo from local storage
@@ -207,7 +207,7 @@ function removeToDoLocal(todo){
     else{
         todos = JSON.parse(localStorage.getItem('todos'));
     }
-    const todoIndex = todos.indexOf(todo.children[0].innerHTML);
+    const todoIndex = todos.indexOf(todo.children[1].innerHTML);
     console.log(todo);
     todos.splice(todoIndex, 1);
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -223,7 +223,7 @@ function removeCompletedLocal(todo){
     else{
         completedTodos = JSON.parse(localStorage.getItem('completedTodos'));
     }
-    const compIndex = completedTodos.indexOf(todo.children[0].innerHTML);
+    const compIndex = completedTodos.indexOf(todo.children[1].innerHTML);
     completedTodos.splice(compIndex, 1);
     localStorage.setItem('completedTodos', JSON.stringify(completedTodos));
 
